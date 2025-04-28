@@ -1,0 +1,272 @@
+<mxfile host="app.diagrams.net" modified="2023-03-15T12:00:00.000Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" version="14.7.7" etag="uC4C3X64pPKvF_xBx_h8" type="device">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Event-Driven Risk Analytics Platform">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="2" value="Event-Driven Risk Analytics Platform Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="284.5" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Sources Section -->
+        <mxCell id="3" value="Data Sources" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Kafka Streams" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="3">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="EOD/Intraday CSV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="3">
+          <mxGeometry y="60" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Athena Queries" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="3">
+          <mxGeometry y="90" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="External APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="3">
+          <mxGeometry y="120" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Ingestion Section -->
+        <mxCell id="8" value="Pluggable Ingestion Framework" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Source Adapters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="8">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Dynamic Schema Management" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="8">
+          <mxGeometry y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Transformation Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="8">
+          <mxGeometry y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Metadata Capture" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="8">
+          <mxGeometry y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Event Bus -->
+        <mxCell id="13" value="Event Bus (Kafka)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="1080" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="group" vertex="1" connectable="0" parent="13">
+          <mxGeometry y="30" width="1080" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="position-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="14">
+          <mxGeometry x="20" y="5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="reference-data-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="14">
+          <mxGeometry x="220" y="5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="risk-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="14">
+          <mxGeometry x="420" y="5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="alert-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="14">
+          <mxGeometry x="620" y="5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="market-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="14">
+          <mxGeometry x="820" y="5" width="180" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Enrichment Service -->
+        <mxCell id="20" value="Data Enrichment Service" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="450" y="80" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Reference Data Cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" vertex="1" parent="20">
+          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Stream Processing Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" vertex="1" parent="20">
+          <mxGeometry y="60" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Field Generation (Tenor, Risk-Free)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" vertex="1" parent="20">
+          <mxGeometry y="90" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Rule Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" vertex="1" parent="20">
+          <mxGeometry y="120" width="240" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Real-Time Risk Calculation Engine -->
+        <mxCell id="25" value="Real-Time Risk Calculation Engine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="720" y="80" width="400" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="group" vertex="1" connectable="0" parent="25">
+          <mxGeometry y="30" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="DV01 Calculation Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="CS01 Calculation Module" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry x="210" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Sensitivity Approximation Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry y="40" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="What-if Scenario Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry x="210" y="40" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Aggregation &amp; Time-Series Analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="Risk Difference Calculator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="26">
+          <mxGeometry x="210" y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Storage Layer -->
+        <mxCell id="33" value="Data Storage &amp; Persistence" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="340" y="400" width="560" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="group" vertex="1" connectable="0" parent="33">
+          <mxGeometry y="30" width="560" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Time-Series Database&#xa;(InfluxDB/TimescaleDB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="34">
+          <mxGeometry x="20" y="10" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Document Database&#xa;(MongoDB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="34">
+          <mxGeometry x="300" y="10" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Data Lake&#xa;(S3/Delta Lake)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="34">
+          <mxGeometry x="20" y="70" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Feature Store&#xa;(Feast/Hopsworks)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="34">
+          <mxGeometry x="300" y="70" width="240" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Access Layer -->
+        <mxCell id="39" value="Access Layer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="340" y="600" width="560" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="" style="group" vertex="1" connectable="0" parent="39">
+          <mxGeometry y="30" width="560" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="Real-time UI Portal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" vertex="1" parent="40">
+          <mxGeometry x="20" y="10" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="REST/GraphQL APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" vertex="1" parent="40">
+          <mxGeometry x="195" y="10" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="Alert Delivery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" vertex="1" parent="40">
+          <mxGeometry x="370" y="10" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="Interactive Data Science Workspace" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" vertex="1" parent="40">
+          <mxGeometry x="195" y="50" width="150" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Machine Learning Layer -->
+        <mxCell id="45" value="Machine Learning &amp; Analytics" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="940" y="400" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="Anomaly Detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="45">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="Predictive Analytics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="45">
+          <mxGeometry y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="ML Model Registry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="45">
+          <mxGeometry y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="49" value="Experiment Tracking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="45">
+          <mxGeometry y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Platform Services -->
+        <mxCell id="50" value="Platform Services" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="Service Discovery" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="50">
+          <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="Authentication" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="50">
+          <mxGeometry y="60" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="Monitoring &amp; Alerts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="50">
+          <mxGeometry y="90" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="Data Governance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=center;fontColor=#333333" vertex="1" parent="50">
+          <mxGeometry y="120" width="160" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Bounded Context Container -->
+        <mxCell id="55" value="Bounded Context Management" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="940" y="600" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="56" value="Client Context (e.g., Citadel)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="55">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="Product Context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=center;" vertex="1" parent="55">
+          <mxGeometry y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections -->
+        <!-- Sources to Ingestion -->
+        <mxCell id="58" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3" target="8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="155" as="sourcePoint" />
+            <mxPoint x="230" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Ingestion to Event Bus -->
+        <mxCell id="59" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="240" as="sourcePoint" />
+            <mxPoint x="330" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Event Bus to Data Enrichment -->
+        <mxCell id="60" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.4;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="13" target="20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="472" y="280" as="sourcePoint" />
+            <mxPoint x="472" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Data Enrichment to Event Bus -->
+        <mxCell id="61" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="20" target="13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="240" as="sourcePoint" />
+            <mxPoint x="570" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Event Bus to Risk Calculation -->
+        <mxCell id="62" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="13" target="25">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="796" y="280" as="sourcePoint" />
+            <mxPoint x="796" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Risk Calculation to Event Bus -->
+        <mxCell id="63" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.8;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="25" target="13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="240" as="sourcePoint" />
+            <mxPoint x="904" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Event Bus to Storage -->
+        <mxCell id="64" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="13" target="33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="370" as="sourcePoint" />
+            <mxPoint x="580" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Event Bus to ML -->
+        <mxCell id="65" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="13" target="45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1012" y="360" as="sourcePoint" />
+            <mxPoint x="1030" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Storage to Access Layer -->
+        <mxCell id="66" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="33" target="39">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="570" as="sourcePoint" />
+            <mxPoint x="620" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ML to Bounded Context -->
+        <mxCell id="67" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0
